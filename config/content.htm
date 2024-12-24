@@ -73,8 +73,7 @@
 <p><span> </span><span>B</span><span>r</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span><span>:<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/3f65f669851b143a54cbb844c3618322/raw/a11daedde3f597db631cb3f47bf683fa643e8008/w12.py">執行程式連結</a></span></p>
 <p><span>Jupyter lab:<a href="http://localhost:8888/lab/tree/RTC%3Anotebook/02_variables.ipynb">執行連結</a></span></p>
 <p><span>程式語法</span><span>:Python 語法</span><span> </span></p>
-<p><span>執行心得</span><span>:在 Python 中使用 <code>for</code> 迴圈以及使用 <code>if...else</code> 來根據條件做不同的處理。判斷每個動物是否是使用者最想看到的。如果是，則輸出該動物並說明它是想看的動物。如果不是，則僅顯示該動物。</span></p>
-<h3>w13_hw</h3>
+<p><span>執行心得</span><span>:在 Python 中使用for迴圈以及使用if...else來根據條件做不同的處理。判斷每個動物是否是使用者最想看到的。如果是，則輸出該動物並說明它是想看的動物。如果不是，則僅顯示該動物。</span></p><h3>w13_hw</h3>
 <h4>w13_ai</h4>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0sCptSqnmfk?si=-jB0p2NyXSxg9tMU" title="YouTube video player" width="560"></iframe></p>
 <p>解題思考: 透過點座標的掃瞄, 先採用尺寸較大格點 (如每 10 pixel 掃描一點), 即可判定點群位於那一個特定區域並<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/3148911ad594ac9e5a370cdd06227e972176779c/inside_circle1_brython.py">進行著色</a>. 當掃描細至單一 pixel 時, 就可以完成<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/fae5dd0145a7d14926dc7c9807ba2535d4b993c0/inside_circle1_1pixel_brython.py">區域著色</a>.</p>
@@ -103,11 +102,11 @@
 <p><span>第四題:以"從 1 累加到 100"(避開數字出現"8"的整數):<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw4.py">add_avoid_8</a></span></p>
 <p><span></span></p>
 <p><span>完成上述題目, 請將各題目的設計思考、執行過程以及每一行所引用的 Python 程式用法, 整理在 w15 網頁中. 最後列出各題目執行後的心得.</span></p>
-<p>第一題:使用 <code>for</code> 迴圈從1到100，將每個數字加到一個累加變數中，最後在顯示出來。這樣可以提高運算速度不需要從1加到100。</p>
-<p><span>第二題:將累加過程封裝成一個函式 <code>addto</code>，能接受兩個參數 <code>init</code> 和 <code>upto</code>，在函式內使用迴圈來完成累加，最後在顯示出來。在一開始就將範圍設定好從1到100，再讓程式返回做累加最終的出結果。</span></p>
-<p><span>第三題:(<code>i % 2 == 0</code>)可以檢查數字是否為偶數，在使用(<code>sum += i)做</code>累加偶數，若為偶數，則加到總和中。</span></p>
-<p><span>第四題:(<code>if '8' in str(i))是</code>將數字轉換為字串，並檢查是否包含字符 "8"，跳過包含8的數字，最後再做累加。</span></p>
-<p><span>心得:使用了 <code>for</code>迴圈來將每個數字加到一個累加變數中，以及條件判斷來篩選需要累加的數字，最後在顯示出來。我覺得這些題目讓我嘗試運用 Python 進行數據處理和篩選是一種新的體驗。</span></p><h1>HW 2</h1>
+<p>第一題:使用for迴圈從1到100，將每個數字加到一個累加變數中，最後在顯示出來。這樣可以提高運算速度不需要從1加到100。</p>
+<p><span>第二題:將累加過程封裝成一個函式addto，能接受兩個參數init和upto，在函式內使用迴圈來完成累加，最後在顯示出來。在一開始就將範圍設定好從1到100，再讓程式返回做累加最終的出結果。</span></p>
+<p><span>第三題:(i % 2 == 0)可以檢查數字是否為偶數，在使用(sum +=i)做累加偶數，若為偶數，則加到總和中。</span></p>
+<p><span>第四題:(if '8' in str(i))是將數字轉換為字串，並檢查是否包含字符 "8"，跳過包含8的數字，最後再做累加。</span></p>
+<p><span>心得:使用了for迴圈來將每個數字加到一個累加變數中，以及條件判斷來篩選需要累加的數字，最後在顯示出來。我覺得這些題目讓我嘗試運用 Python 進行數據處理和篩選是一種新的體驗。</span></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
