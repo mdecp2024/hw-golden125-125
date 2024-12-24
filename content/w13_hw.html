@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,22 +141,22 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>w13</h1>
-<p></p>
-<p></p>
-<p></p>
+    <div id="tipue_search_content">w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>w13_hw</h1>
 <h4>w13_ai</h4>
-<p></p>
-<p></p>
-<p></p>
-<h4>w13_hw</h4>
-<p></p>
-<p></p>
-<h4>w14_ex</h4>
-<p></p>
-<p></p>
-<p></p>
-<br />w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0sCptSqnmfk?si=-jB0p2NyXSxg9tMU" title="YouTube video player" width="560"></iframe></p>
+<p>解題思考: 透過點座標的掃瞄, 先採用尺寸較大格點 (如每 10 pixel 掃描一點), 即可判定點群位於那一個特定區域並<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/3148911ad594ac9e5a370cdd06227e972176779c/inside_circle1_brython.py">進行著色</a>. 當掃描細至單一 pixel 時, 就可以完成<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/fae5dd0145a7d14926dc7c9807ba2535d4b993c0/inside_circle1_1pixel_brython.py">區域著色</a>.</p>
+<p>另外, 透過 if 判定各點所在區域的條件組合, 可以就是否:</p>
+<p>位於第一個圓內部</p>
+<p>位於第二個圓內部</p>
+<p>位於第一個正方形內部</p>
+<p>位於第二個正方形內部</p>
+<p>位於第一個正方形上方、下方、左方、右方</p>
+<p>位於第二個正方形上方、下方、左方、右方</p>
+<p>位於對角線上方範圍</p>
+<p>位於對角線下方範圍</p>
+<p>等條件<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/c885949528f12bfa567ebbd2474d13ef4b5c1e46/if_append_brython.py">區分各區域的不同屬性</a>, 並設法利用這些區域屬性進行<a href="https://stackoverflow.com/questions/50528954/give-each-shape-on-html5-canvas-a-random-colour">顏色運算</a>.</p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/676c6f27ab33fd18873284c51b4c2c008d312c01/almost_right_brython.py">接近正確</a>以及<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/cb369d190d0e69a48e4d44dea5fcab660f4c0f18/almost_right2_brython.py">更細化</a>的著色範例.</p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/68a83d1d8c01f59f9ddf14210b94a10d/raw/6e4e953d401657330d8e226d881889dab8ecd84a/w13_hw.py">w13作業</a></p><br />w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
         
     <!-- footer -->
       <div class="container">
