@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -144,16 +144,69 @@ img.add_border {
     <div id="tipue_search_content">w13_hw << <a href='w13_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
 <p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
 <p><span>第一題:以"從 1 累加到 100":</span><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw1.py">anchor</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># sum 初始值設為 0
+# sum 為全域變數
+sum = 0
+
+# 定義累加邏輯，並不使用 addto(1, 100) 呼叫
+init = 1  # 起始值
+upto = 100  # 終止值
+
+# 利用 for 重複迴圈與變數加法進行累加
+for i in range(init, upto + 1):
+    sum = sum + i
+
+print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
+print(sum)  # 顯示最終結果</pre>
+<p><br/><br/></p>
 <p>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</p>
 <p><span>第二題:以"從 1 累加到 100"[使用addto(1, 100)]:</span><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw2.py">addto</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(init, upto):
+    sum = 0  # 將 sum 設為局部變數，每次呼叫時重設為 0
+    for i in range(init, upto + 1):
+        sum = sum + i
+    print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
+    return sum  # 可以返回最終的累加值（如果需要）
+
+# 呼叫函式，並指定範圍從 1 到 100
+result = addto(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><br/><br/></p>
 <p>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果, 但只納入偶數. 頁面中請以 <span>add_only_even 作為連結標題.</span></p>
 <p><span>第三題:以"從 1 累加到 100(只加偶數)":<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw3.py">add_only_even</a></span></p>
-<p><span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(init, upto):
+    sum = 0  # 初始化 sum 為 0，並將其設為局部變數
+    for i in range(init, upto + 1):
+        if i % 2 == 0:  # 只加偶數
+            sum += i
+    print("從" + str(init) + "累加到" + str(upto) + "的偶數總和為：" + str(sum))
+    return sum  # 返回偶數累加的總和
+
+# 呼叫函式，指定範圍從 1 到 100
+result = add_only_even(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><span><br/></span></p>
 <p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
 <p><span>第四題:以"從 1 累加到 100"(避開數字出現"8"的整數):<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw4.py">add_avoid_8</a></span></p>
-<p><span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(init, upto):
+    sum = 0  # 初始化 sum 為 0，並將其設為局部變數
+    for i in range(init, upto + 1):
+        if '8' in str(i):  # 檢查數字是否包含 "8"
+            continue  # 如果包含 "8"，則跳過這個數字
+        sum += i  # 累加不包含 "8" 的數字
+    print(f"從{init}累加到{upto}，避開包含 '8' 的數字後的總和為：{sum}")
+    return sum  # 返回累加的結果
+
+# 呼叫函式，指定範圍從 1 到 100
+result = add_avoid_8(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><span><br/></span></p>
 <p><span>完成上述題目, 請將各題目的設計思考、執行過程以及每一行所引用的 Python 程式用法, 整理在 w15 網頁中. 最後列出各題目執行後的心得.</span></p>
 <p>第一題:使用for迴圈從1到100，將每個數字加到一個累加變數中，最後在顯示出來。這樣可以提高運算速度不需要從1加到100。</p>
 <p><span>第二題:將累加過程封裝成一個函式addto，能接受兩個參數init和upto，在函式內使用迴圈來完成累加，最後在顯示出來。在一開始就將範圍設定好從1到100，再讓程式返回做累加最終的出結果。</span></p>

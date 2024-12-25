@@ -63,9 +63,84 @@
 <p>以下影片說明如何利用近端可攜系統維護個人作業網站:</p>
 <p>1.  已知可以用 Python 程式<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/c2225ac22f32ee8485a630b42cf3f4d8567bb661/up_to_down_pyramid.py">由上往下列印三角形 *</a>, 或<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/56793c72d4495d564e3cc6214ed5fb68dbd2b21d/left_to_right_pyramid.py">由左往右列印三角形 *</a>, 請將此程式延伸到可以在 10x10 的字元區域中, 以 "*" 字元列印出圓型區域. 完成後請將程式碼存入個人 Gist 後, 直接在個人作業網站中的 Brython 頁面中執行. (提示: ?src=gist_script_URL)</p>
 <p>第一題:<a href="https://mdecp2024.github.io/hw-golden125-125/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/d35cee45134fd1de1322b74cb03320b7/raw/e08eeb6199cc0b543e6850803892b72030aecebd/%25E7%25B1%25B3%25E5%259C%2593.py">米字圖形</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def print_filled_circle_in_grid():
+    # 圖形的大小
+    width, height = 10, 10
+    # 圓心的座標和半徑
+    cx, cy = 5, 5  # 圓心 (5, 5)
+    r = 4  # 半徑
+
+    # 繪製每個點
+    for y in range(height):
+        for x in range(width):
+            # 計算 (x, y) 到圓心的距離
+            distance = (x - cx)**2 + (y - cy)**2
+            if distance &lt;= r**2:  # 判斷是否在圓內
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()  # 換行
+
+print_filled_circle_in_grid()</pre>
 <p>2. 已知可以在網頁中利用 Brython 繪製方格與塗色, 如下連結, 請設法修改此一程式, 直接將程式存入個人的 Gist, 並利用黑色方塊圍出一個圓形區域.</p>
 <p>第二題:<a href="https://mdecp2024.github.io/hw-golden125-125/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/d35cee45134fd1de1322b74cb03320b7/raw/62b1d1b89c597ae81134bb9c0eb609d884ccfca9/%25E7%25B1%25B3%25E5%259C%25932.py">網頁上的方格與塗色</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 建立畫布
+canvas = html.CANVAS(width=200, height=200)  # 200x200的畫布大小
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 獲取畫布的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 每個格子的像素大小
+gs = 20  # 每格20像素
+tc = 10  # 10x10的格子數量
+
+# 繪製矩形的功能
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製網格
+def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+# 填充圓形區域
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+
+# 在網格中填充圓形
+def draw_circle_in_grid(cx, cy, r):
+    for i in range(tc):
+        for j in range(tc):
+            # 計算每個格子中心的座標
+            x = i * gs + gs // 2
+            y = j * gs + gs // 2
+            # 計算該格子是否在圓形內部
+            distance = (x - cx) ** 2 + (y - cy) ** 2
+            if distance &lt;= r ** 2:
+                fill(i * gs, j * gs, "black")
+
+# 繪製網格並在網格內繪製實心圓形
+grid(tc, tc, gs)
+
+# 圓心在(5, 5)，半徑4個格子，計算圓心在畫布上的位置
+center_x = 5 * gs + gs // 2
+center_y = 5 * gs + gs // 2
+radius = 4 * gs  # 半徑為4格
+
+# 在網格內繪製實心圓形
+draw_circle_in_grid(center_x, center_y, radius)</pre>
+<p><br/><br/></p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <p></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QISPMYMt6_c?si=1hDH5GsqfslFrD7I" title="YouTube video player" width="560"></iframe></p><h3>w12_hw</h3>
@@ -73,7 +148,8 @@
 <p><span> </span><span>B</span><span>r</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span><span>:<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/3f65f669851b143a54cbb844c3618322/raw/a11daedde3f597db631cb3f47bf683fa643e8008/w12.py">執行程式連結</a></span></p>
 <p><span>Jupyter lab:<a href="http://localhost:8888/lab/tree/RTC%3Anotebook/02_variables.ipynb">執行連結</a></span></p>
 <p><span>程式語法</span><span>:Python 語法</span><span> </span></p>
-<p><span>執行心得</span><span>:在 Python 中使用for迴圈以及使用if...else來根據條件做不同的處理。判斷每個動物是否是使用者最想看到的。如果是，則輸出該動物並說明它是想看的動物。如果不是，則僅顯示該動物。</span></p><h3>w13_hw</h3>
+<p><span>執行心得</span><span>:在 Python 中使用for迴圈以及使用if...else來根據條件做不同的處理。判斷每個動物是否是使用者最想看到的。如果是，則輸出該動物並說明它是想看的動物。如果不是，則僅顯示該動物。</span></p>
+<h3>w13_hw</h3>
 <h4>w13_ai</h4>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0sCptSqnmfk?si=-jB0p2NyXSxg9tMU" title="YouTube video player" width="560"></iframe></p>
 <p>解題思考: 透過點座標的掃瞄, 先採用尺寸較大格點 (如每 10 pixel 掃描一點), 即可判定點群位於那一個特定區域並<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/3148911ad594ac9e5a370cdd06227e972176779c/inside_circle1_brython.py">進行著色</a>. 當掃描細至單一 pixel 時, 就可以完成<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/fae5dd0145a7d14926dc7c9807ba2535d4b993c0/inside_circle1_1pixel_brython.py">區域著色</a>.</p>
@@ -88,19 +164,73 @@
 <p>位於對角線下方範圍</p>
 <p>等條件<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/c885949528f12bfa567ebbd2474d13ef4b5c1e46/if_append_brython.py">區分各區域的不同屬性</a>, 並設法利用這些區域屬性進行<a href="https://stackoverflow.com/questions/50528954/give-each-shape-on-html5-canvas-a-random-colour">顏色運算</a>.</p>
 <p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/676c6f27ab33fd18873284c51b4c2c008d312c01/almost_right_brython.py">接近正確</a>以及<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/cb369d190d0e69a48e4d44dea5fcab660f4c0f18/almost_right2_brython.py">更細化</a>的著色範例.</p>
-<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/68a83d1d8c01f59f9ddf14210b94a10d/raw/6e4e953d401657330d8e226d881889dab8ecd84a/w13_hw.py">w13作業</a></p><h3>w15</h3>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/68a83d1d8c01f59f9ddf14210b94a10d/raw/6e4e953d401657330d8e226d881889dab8ecd84a/w13_hw.py">w13作業</a></p>
+<h3>w15</h3>
 <p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
 <p><span>第一題:以"從 1 累加到 100":</span><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw1.py">anchor</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># sum 初始值設為 0
+# sum 為全域變數
+sum = 0
+
+# 定義累加邏輯，並不使用 addto(1, 100) 呼叫
+init = 1  # 起始值
+upto = 100  # 終止值
+
+# 利用 for 重複迴圈與變數加法進行累加
+for i in range(init, upto + 1):
+    sum = sum + i
+
+print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
+print(sum)  # 顯示最終結果</pre>
+<p><br/><br/></p>
 <p>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</p>
 <p><span>第二題:以"從 1 累加到 100"[使用addto(1, 100)]:</span><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw2.py">addto</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(init, upto):
+    sum = 0  # 將 sum 設為局部變數，每次呼叫時重設為 0
+    for i in range(init, upto + 1):
+        sum = sum + i
+    print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
+    return sum  # 可以返回最終的累加值（如果需要）
+
+# 呼叫函式，並指定範圍從 1 到 100
+result = addto(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><br/><br/></p>
 <p>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果, 但只納入偶數. 頁面中請以 <span>add_only_even 作為連結標題.</span></p>
 <p><span>第三題:以"從 1 累加到 100(只加偶數)":<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw3.py">add_only_even</a></span></p>
-<p><span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(init, upto):
+    sum = 0  # 初始化 sum 為 0，並將其設為局部變數
+    for i in range(init, upto + 1):
+        if i % 2 == 0:  # 只加偶數
+            sum += i
+    print("從" + str(init) + "累加到" + str(upto) + "的偶數總和為：" + str(sum))
+    return sum  # 返回偶數累加的總和
+
+# 呼叫函式，指定範圍從 1 到 100
+result = add_only_even(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><span><br/></span></p>
 <p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
 <p><span>第四題:以"從 1 累加到 100"(避開數字出現"8"的整數):<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw4.py">add_avoid_8</a></span></p>
-<p><span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(init, upto):
+    sum = 0  # 初始化 sum 為 0，並將其設為局部變數
+    for i in range(init, upto + 1):
+        if '8' in str(i):  # 檢查數字是否包含 "8"
+            continue  # 如果包含 "8"，則跳過這個數字
+        sum += i  # 累加不包含 "8" 的數字
+    print(f"從{init}累加到{upto}，避開包含 '8' 的數字後的總和為：{sum}")
+    return sum  # 返回累加的結果
+
+# 呼叫函式，指定範圍從 1 到 100
+result = add_avoid_8(1, 100)
+
+# 顯示返回值
+print(result)</pre>
+<p><span><br/></span></p>
 <p><span>完成上述題目, 請將各題目的設計思考、執行過程以及每一行所引用的 Python 程式用法, 整理在 w15 網頁中. 最後列出各題目執行後的心得.</span></p>
 <p>第一題:使用for迴圈從1到100，將每個數字加到一個累加變數中，最後在顯示出來。這樣可以提高運算速度不需要從1加到100。</p>
 <p><span>第二題:將累加過程封裝成一個函式addto，能接受兩個參數init和upto，在函式內使用迴圈來完成累加，最後在顯示出來。在一開始就將範圍設定好從1到100，再讓程式返回做累加最終的出結果。</span></p>
@@ -117,6 +247,8 @@
 <h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam1</h3>
+<p><span></span></p>
 <h1>HW3</h1>
 <h4><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">主題：Python 的數字、算法與迴圈 (20%)</span></span></h4>
 <p style="padding-left: 30px;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Python 課程教材： https: </span></span><a href="https://www.learnpythonwithjupyter.com/"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">//www.learnpythonwithjupyter.com/</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> - PART 4 與 Part 5</span></span></p>
@@ -130,6 +262,7 @@
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam2</h3>
 <h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
@@ -142,6 +275,7 @@
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam3</h3>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>

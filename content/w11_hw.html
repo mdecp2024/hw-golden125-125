@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -146,9 +146,84 @@ img.add_border {
 <p>以下影片說明如何利用近端可攜系統維護個人作業網站:</p>
 <p>1.  已知可以用 Python 程式<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/c2225ac22f32ee8485a630b42cf3f4d8567bb661/up_to_down_pyramid.py">由上往下列印三角形 *</a>, 或<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/56793c72d4495d564e3cc6214ed5fb68dbd2b21d/left_to_right_pyramid.py">由左往右列印三角形 *</a>, 請將此程式延伸到可以在 10x10 的字元區域中, 以 "*" 字元列印出圓型區域. 完成後請將程式碼存入個人 Gist 後, 直接在個人作業網站中的 Brython 頁面中執行. (提示: ?src=gist_script_URL)</p>
 <p>第一題:<a href="https://mdecp2024.github.io/hw-golden125-125/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/d35cee45134fd1de1322b74cb03320b7/raw/e08eeb6199cc0b543e6850803892b72030aecebd/%25E7%25B1%25B3%25E5%259C%2593.py">米字圖形</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def print_filled_circle_in_grid():
+    # 圖形的大小
+    width, height = 10, 10
+    # 圓心的座標和半徑
+    cx, cy = 5, 5  # 圓心 (5, 5)
+    r = 4  # 半徑
+
+    # 繪製每個點
+    for y in range(height):
+        for x in range(width):
+            # 計算 (x, y) 到圓心的距離
+            distance = (x - cx)**2 + (y - cy)**2
+            if distance &lt;= r**2:  # 判斷是否在圓內
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()  # 換行
+
+print_filled_circle_in_grid()</pre>
 <p>2. 已知可以在網頁中利用 Brython 繪製方格與塗色, 如下連結, 請設法修改此一程式, 直接將程式存入個人的 Gist, 並利用黑色方塊圍出一個圓形區域.</p>
 <p>第二題:<a href="https://mdecp2024.github.io/hw-golden125-125/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/d35cee45134fd1de1322b74cb03320b7/raw/62b1d1b89c597ae81134bb9c0eb609d884ccfca9/%25E7%25B1%25B3%25E5%259C%25932.py">網頁上的方格與塗色</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 建立畫布
+canvas = html.CANVAS(width=200, height=200)  # 200x200的畫布大小
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 獲取畫布的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 每個格子的像素大小
+gs = 20  # 每格20像素
+tc = 10  # 10x10的格子數量
+
+# 繪製矩形的功能
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製網格
+def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+# 填充圓形區域
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+
+# 在網格中填充圓形
+def draw_circle_in_grid(cx, cy, r):
+    for i in range(tc):
+        for j in range(tc):
+            # 計算每個格子中心的座標
+            x = i * gs + gs // 2
+            y = j * gs + gs // 2
+            # 計算該格子是否在圓形內部
+            distance = (x - cx) ** 2 + (y - cy) ** 2
+            if distance &lt;= r ** 2:
+                fill(i * gs, j * gs, "black")
+
+# 繪製網格並在網格內繪製實心圓形
+grid(tc, tc, gs)
+
+# 圓心在(5, 5)，半徑4個格子，計算圓心在畫布上的位置
+center_x = 5 * gs + gs // 2
+center_y = 5 * gs + gs // 2
+radius = 4 * gs  # 半徑為4格
+
+# 在網格內繪製實心圓形
+draw_circle_in_grid(center_x, center_y, radius)</pre>
+<p><br/><br/></p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <p></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QISPMYMt6_c?si=1hDH5GsqfslFrD7I" title="YouTube video player" width="560"></iframe></p><br />w10 << <a href='w10.html'>Previous</a> <a href='w12_hw.html'>Next</a> >> w12_hw</div>
