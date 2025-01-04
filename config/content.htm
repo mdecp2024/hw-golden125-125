@@ -40,7 +40,7 @@
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>W7</h3>
-<p><a href="https://youtu.be/-hxqRV-CdIA?si=xkak4sCVLoJoAEoT">https://youtu.be/-hxqRV-CdIA?si=xkak4sCVLoJoAEoT</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-hxqRV-CdIA?si=4uDT6zlfS0rBhFPm" title="YouTube video player" width="560"></iframe></p>
 <h3>w10</h3>
 <p>請在個人網頁標題為 "HW 1 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w10".</p>
 <p>並在 "w10" 頁面中完成下列隨堂考試的要求:</p>
@@ -143,7 +143,8 @@ draw_circle_in_grid(center_x, center_y, radius)</pre>
 <p><br/><br/></p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <p></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QISPMYMt6_c?si=1hDH5GsqfslFrD7I" title="YouTube video player" width="560"></iframe></p><h3>w12_hw</h3>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QISPMYMt6_c?si=1hDH5GsqfslFrD7I" title="YouTube video player" width="560"></iframe></p>
+<h3>w12_hw</h3>
 <p><span>請各組組員分別利用 Brython 以及 Jupyter lab 環境</span><span>, 執行可攜程式 notebook 目錄中的 01</span><span>_string</span><span>_input</span><span>_print</span><span>.ipynb 至 10</span><span>_for</span><span>_search</span><span>.ipynb 筆記本程式</span><span>, 完成後請將能在 Brython 執行的程式碼存入個人 Gist 後</span><span>, 將各程式執行連結放入 w12</span><span>_hw 網頁上</span><span>. 最後請說明各範例中所使用的程式語法以及執行心得。</span></p>
 <p><span> </span><span>B</span><span>r</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span><span>:<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/3f65f669851b143a54cbb844c3618322/raw/a11daedde3f597db631cb3f47bf683fa643e8008/w12.py">執行程式連結</a></span></p>
 <p><span>Jupyter lab:<a href="http://localhost:8888/lab/tree/RTC%3Anotebook/02_variables.ipynb">執行連結</a></span></p>
@@ -213,7 +214,7 @@ result = add_only_even(1, 100)
 
 # 顯示返回值
 print(result)</pre>
-<p><span><br/></span></p>
+<p><span> </span></p>
 <p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
 <p><span>第四題:以"從 1 累加到 100"(避開數字出現"8"的整數):<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/49a12755956de21703169ff1ed9a8976/raw/6020f0a30d2d0b15a5cf38bcf16ef0c775dd42bd/w15_hw4.py">add_avoid_8</a></span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(init, upto):
@@ -230,13 +231,14 @@ result = add_avoid_8(1, 100)
 
 # 顯示返回值
 print(result)</pre>
-<p><span><br/></span></p>
+<p><span> </span></p>
 <p><span>完成上述題目, 請將各題目的設計思考、執行過程以及每一行所引用的 Python 程式用法, 整理在 w15 網頁中. 最後列出各題目執行後的心得.</span></p>
 <p>第一題:使用for迴圈從1到100，將每個數字加到一個累加變數中，最後在顯示出來。這樣可以提高運算速度不需要從1加到100。</p>
 <p><span>第二題:將累加過程封裝成一個函式addto，能接受兩個參數init和upto，在函式內使用迴圈來完成累加，最後在顯示出來。在一開始就將範圍設定好從1到100，再讓程式返回做累加最終的出結果。</span></p>
 <p><span>第三題:(i % 2 == 0)可以檢查數字是否為偶數，在使用(sum +=i)做累加偶數，若為偶數，則加到總和中。</span></p>
 <p><span>第四題:(if '8' in str(i))是將數字轉換為字串，並檢查是否包含字符 "8"，跳過包含8的數字，最後再做累加。</span></p>
-<p><span>心得:使用了for迴圈來將每個數字加到一個累加變數中，以及條件判斷來篩選需要累加的數字，最後在顯示出來。我覺得這些題目讓我嘗試運用 Python 進行數據處理和篩選是一種新的體驗。</span></p><h1>HW 2</h1>
+<p><span>心得:使用了for迴圈來將每個數字加到一個累加變數中，以及條件判斷來篩選需要累加的數字，最後在顯示出來。我覺得這些題目讓我嘗試運用 Python 進行數據處理和篩選是一種新的體驗。</span></p>
+<h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
@@ -248,8 +250,104 @@ print(result)</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam1</h3>
-<p><span></span></p>
-<h1>HW3</h1>
+<p>請在個人網頁標題為 "HW 2 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam1".</p>
+<p>並在 "w16_exam1" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目: 請以<span>自己的學號最後四碼</span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像</p>
+<p></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/c8ce7021eb4b852b070182a22bb233af/raw/7a392e9572a816ded49f49798ad7ab5a091f010e/w16_exam1.py">Brython程式</a></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+import math
+
+# 初始化 HTML，確保 canvas 元素存在
+def setup_canvas():
+    if not document.querySelector("#my_canvas"):
+        canvas = html.CANVAS(id="my_canvas", width=800, height=600, style={"border": "1px solid black"})
+        document &lt;= canvas
+
+setup_canvas()
+
+# 設定畫布及其上下文
+canvas = document["my_canvas"]
+ctx = canvas.getContext("2d")
+
+# 定義原點座標
+origin_x, origin_y = 32, 44
+
+# 清空畫布
+ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+# 繪製 X 軸和 Y 軸
+ctx.beginPath()
+ctx.moveTo(origin_x, origin_y)  # 原點
+ctx.lineTo(canvas.width, origin_y)  # 向右 X 軸
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, canvas.height)  # 向下 Y 軸
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2
+ctx.stroke()
+
+# 標示原點座標
+ctx.font = "12px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("(32, 44)", origin_x + 5, origin_y - 5)
+
+# 定義粉紅色圓形 (基準大小)
+circle_x, circle_y, circle_radius = 250 + 90 - 30, 150, 50
+
+# 繪製粉紅色圓形
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, circle_radius, 0, 2 * math.pi)
+ctx.fillStyle = "magenta"
+ctx.fill()
+
+# 繪製橘色六邊形
+ctx.beginPath()
+hex_coords = [(50, 0), (25, 43), (-25, 43), (-50, 0), (-25, -43), (25, -43)]
+hex_coords = [(x + 100, y + circle_y) for x, y in hex_coords]  # 調整位置
+ctx.moveTo(*hex_coords[0])
+for x, y in hex_coords[1:]:
+    ctx.lineTo(x, y)
+ctx.closePath()
+ctx.fillStyle = "orange"
+ctx.fill()
+
+# 繪製藍綠色菱形
+ctx.beginPath()
+diamond_coords = [(0, -50), (35, 0), (0, 50), (-35, 0)]
+diamond_coords = [(x + 180 + 20, y + circle_y) for x, y in diamond_coords]
+ctx.moveTo(*diamond_coords[0])
+for x, y in diamond_coords[1:]:
+    ctx.lineTo(x, y)
+ctx.closePath()
+ctx.fillStyle = "teal"
+ctx.fill()
+
+# 繪製縮小的藍色三角形 (放置在菱形的右下方)
+ctx.beginPath()
+triangle_coords = [(0, -25), (25, 25), (-25, 25)]  # 縮小比例
+triangle_coords = [(x + 220 + 20, y + circle_y + 40 - 15) for x, y in triangle_coords]  # 調整位置
+ctx.moveTo(*triangle_coords[0])
+for x, y in triangle_coords[1:]:
+    ctx.lineTo(x, y)
+ctx.closePath()
+ctx.fillStyle = "cyan"
+ctx.fill()
+
+# 繪製黃色正方形
+ctx.beginPath()
+ctx.rect(300 + 80, circle_y - 25, 50, 50)
+ctx.fillStyle = "yellow"
+ctx.fill()
+
+# 繪製藍色長方形
+ctx.beginPath()
+ctx.rect(370 + 80, circle_y - 15, 80, 30)
+ctx.fillStyle = "blue"
+ctx.fill()
+</pre>
+<p></p><h1>HW3</h1>
 <h4><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">主題：Python 的數字、算法與迴圈 (20%)</span></span></h4>
 <p style="padding-left: 30px;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Python 課程教材： https: </span></span><a href="https://www.learnpythonwithjupyter.com/"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">//www.learnpythonwithjupyter.com/</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> - PART 4 與 Part 5</span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">完成上述流程整理後，滿足HW3自評分數輸入cp2024自評表單中。</span></span></p>
@@ -263,7 +361,113 @@ print(result)</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam2</h3>
-<h1>HW 4</h1>
+<p>請在個人網頁標題為 "HW 3 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam2".</p>
+<p>並在 "w16_exam2" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的藍色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
+<p></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/c8ce7021eb4b852b070182a22bb233af/raw/7a392e9572a816ded49f49798ad7ab5a091f010e/w16_exam2.py">Brython程式</a></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+
+def draw_maze(angle_degrees):
+    # 创建和添加画布
+    canvas = html.CANVAS(width=1200, height=1200)
+    brython_div = doc["brython_div1"]
+    brython_div &lt;= canvas
+
+    # 获取绘图上下文
+    ctx = canvas.getContext("2d")
+
+    # 设置绘图参数
+    pixel_scale = 100
+    offset_x = 32 * 2
+    offset_y = 17 * 2
+    # 整体向右移动的偏移量
+    move_right_offset = 200
+    angle_radians = math.radians(angle_degrees)
+
+    # 定义迷宫线条
+    lines = [
+        ((0, 0), (1, 0)),
+        ((2, 0), (5, 0)),
+        ((5, 0), (5, 5)),
+        ((3, 5), (5, 5)),
+        ((4, 5), (4, 3)),
+        ((2, 3), (4, 3)),
+        ((1, 3), (1, 5)),
+        ((3, 3), (3, 2)),
+        ((0, 0), (0, 5)),
+        ((0, 5), (2, 5)),
+        ((2, 5), (2, 4)),
+        ((2, 4), (3, 4)),
+        ((0, 2), (1, 2)),
+        ((2, 2), (2, 1)),
+        ((0, 1), (4, 1)),
+        ((4, 1), (4, 2)),
+    ]
+
+    # 旋转并绘制迷宫线条
+    ctx.strokeStyle = "blue"
+    ctx.lineWidth = 2
+    for line in lines:
+        start = line[0]
+        end = line[1]
+
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + move_right_offset + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + move_right_offset + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+
+    return ctx, offset_x + move_right_offset, offset_y
+
+
+def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
+    text_angle_radians = math.radians(text_angle_degrees)
+    ctx.font = "18px Arial"
+    ctx.fillStyle = "red"
+    # 原始文本位置
+    original_x = offset_x + 10
+    original_y = offset_y - 15
+    # 旋转后的文本位置
+    rotated_x = original_x * math.cos(text_angle_radians) - original_y * math.sin(text_angle_radians)
+    rotated_y = original_x * math.sin(text_angle_radians) + original_y * math.cos(text_angle_radians)
+    ctx.save()
+    ctx.translate(offset_x, offset_y)
+    ctx.rotate(text_angle_radians)
+    ctx.fillText("(32, 44)", 10, - 15)
+    ctx.restore()
+
+
+if __name__ == "__main__":
+    # 调整迷宫角度，这里设置为30度，可以根据需要修改
+    maze_angle = 0
+    # 文本角度
+    text_angle = 0
+    ctx, offset_x, offset_y = draw_maze(maze_angle)
+    label_coordinate(ctx, offset_x, offset_y, text_angle)</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -276,7 +480,168 @@ print(result)</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam3</h3>
-<h1>Final Report</h1>
+<p>請在個人網頁標題為 "HW 4 Exam" 頁面之後, 加上一個第三階的頁面, 標題為 "w16_exam3".</p>
+<p>並在 "w16_exam3" 頁面中完成下列隨堂考試的要求 (20%):</p>
+<p>本項任務必須拍攝過程操作影片, 且<span>片頭要先切換到個人的課程網頁 "About" 頁面, 顯示操作者的學號與個人網頁連結</span>.</p>
+<p>題目一: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的黑色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 並且<span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span>.</p>
+<p>繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</p>
+<p></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/golden125-125/c8ce7021eb4b852b070182a22bb233af/raw/7a392e9572a816ded49f49798ad7ab5a091f010e/w16_exam3.py">Brython程式</a></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+ 
+ 
+def draw_maze(angle_degrees):
+    # 创建和添加画布
+    canvas = html.CANVAS(width=1200, height=1200)
+    brython_div = doc["brython_div1"]
+    brython_div &lt;= canvas
+ 
+    # 获取绘图上下文
+    ctx = canvas.getContext("2d")
+ 
+    # 设置绘图参数
+    pixel_scale = 100
+    offset_x = 32 * 2
+    offset_y = 17 * 2
+    # 整体向右移动的偏移量
+    move_right_offset = 200
+    angle_radians = math.radians(angle_degrees)
+ 
+    # 定义迷宫线条
+    lines = [
+        ((0, 0), (1, 0)),
+        ((2, 0), (5, 0)),
+        ((5, 0), (5, 5)),
+        ((3, 5), (5, 5)),
+        ((4, 5), (4, 3)),
+        ((2, 3), (4, 3)),
+        ((1, 3), (1, 5)),
+        ((3, 3), (3, 2)),
+        ((0, 0), (0, 5)),
+        ((0, 5), (2, 5)),
+        ((2, 5), (2, 4)),
+        ((2, 4), (3, 4)),
+        ((0, 2), (1, 2)),
+        ((2, 2), (2, 1)),
+        ((0, 1), (4, 1)),
+        ((4, 1), (4, 2)),
+    ]
+ 
+    # 旋转并绘制迷宫线条
+    ctx.strokeStyle = "blue"
+    ctx.lineWidth = 2
+    for line in lines:
+        start = line[0]
+        end = line[1]
+ 
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + move_right_offset + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + move_right_offset + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+ 
+    return ctx, offset_x + move_right_offset, offset_y, pixel_scale
+ 
+ 
+def find_path():
+    # 简单的路径示例，这里假设的路径，实际需要更复杂的算法
+    # 为了维持原本迷宫路线，这里路径假设不破坏迷宫已有路线
+    path = [
+        ((1.5, 0), (1.5, 0.5)),
+        ((1.5, 0.5), (4.5, 0.5)),
+        ((4.5, 0.5), (4.5, 2.5)),
+        ((4.5, 2.5), (3.5, 2.5)),
+        ((3.5, 2.5), (3.5, 1.5)),
+        ((3.5, 1.5), (2.5, 1.5)),
+        ((2.5, 1.5), (2.5, 2.5)),
+        ((2.5, 2.5), (1.5, 2.5)),
+        ((1.5, 2.5), (1.5, 3.5)),
+        ((1.5, 3.5), (3.5, 3.5)),
+        ((3.5, 3.5), (3.5, 4.5)),
+        ((3.5, 4.5), (2.5, 4.5)),
+        ((2.5, 4.5), (2.5, 5))
+    ]
+    return path
+ 
+ 
+def draw_path(ctx, offset_x, offset_y, angle_degrees, path, pixel_scale):
+    angle_radians = math.radians(angle_degrees)
+    ctx.strokeStyle = "red"
+    ctx.lineWidth = 2
+    for line in path:
+        start = line[0]
+        end = line[1]
+ 
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+ 
+ 
+def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
+    text_angle_radians = math.radians(text_angle_degrees)
+    ctx.font = "18px Arial"
+    ctx.fillStyle = "red"
+    # 原始文本位置
+    original_x = offset_x + 10
+    original_y = offset_y - 15
+    # 旋转后的文本位置
+    rotated_x = original_x * math.cos(text_angle_radians) - original_y * math.sin(text_angle_radians)
+    rotated_y = original_x * math.sin(text_angle_radians) + original_y * math.cos(text_angle_radians)
+    ctx.save()
+    ctx.translate(offset_x, offset_y)
+    ctx.rotate(text_angle_radians)
+    ctx.fillText("(32, 44)", 10, - 15)
+    ctx.restore()
+ 
+ 
+if __name__ == "__main__":
+    # 调整迷宫角度，这里设置为30度，可以根据需要修改
+    maze_angle = 0
+    # 文本角度
+    text_angle = 0
+    ctx, offset_x, offset_y, pixel_scale = draw_maze(maze_angle)
+    path = find_path()
+    draw_path(ctx, offset_x, offset_y, maze_angle, path, pixel_scale)
+    label_coordinate(ctx, offset_x, offset_y, text_angle)</pre><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
